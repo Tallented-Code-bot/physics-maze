@@ -30,6 +30,8 @@ function drawMaze(maze,context){
 	}	
 }
 function drawBetterMaze(maze,context){
+	context.fillStyle="white";
+	context.fillRect(0,0,mazeWidth,mazeHeight)
 	tileWidth=context.canvas.width/mazeWidth;
 	tileHeight=context.canvas.height/mazeHeight;
 	context.strokeStyle="black";
@@ -78,7 +80,10 @@ function drawBetterMaze(maze,context){
 var positionX=5;
 var positionY=5;
 var direction=1
-maze=generateGrid(mazeWidth,mazeHeight);
+maze=generateGrid(mazeWidth,mazeHeight);//make the grid
+pointerVar=new Pointer(5,5,1,maze,mazeWidth,mazeHeight,context);
+debugger
+generateMaze(pointerVar);
 drawBetterMaze(maze,context);
 
 // var path=new pointer(5,5,1)
