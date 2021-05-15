@@ -3,3 +3,16 @@
 	width:500px;
 	height:500px;
 }
+
+
+
+.row{
+	display:flex;
+}
+
+
+.cell{
+	height:40px;
+	width:40px;
+	border: 2px solid rgb(0,45,114);
+}
