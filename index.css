@@ -1,23 +1,6 @@
-*{
-	box-sizing: border-box;
-}
-
-
-.row{
-	display:flex;
-	justify-content: center;
-	align-items: center;
-}
-
-
-.cell{
-	height:35px;
-	width:35px;
-	border: 3px solid rgb(0,45,114);
-	position:relative;
-
-
-	display:flex;
-	align-items: center;
-	justify-content: center;
+#canvas{
+	border:1px solid black;
+	display:block;
+	margin: 0 auto;
+	background:#fffacc;
 }
