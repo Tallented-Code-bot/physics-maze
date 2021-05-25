@@ -1,18 +1,23 @@
-#canvas{
-	border:double 2px black;
-	width:500px;
-	height:500px;
+*{
+	box-sizing: border-box;
 }
-
 
 
 .row{
 	display:flex;
+	justify-content: center;
+	align-items: center;
 }
 
 
 .cell{
-	height:40px;
-	width:40px;
-	border: 2px solid rgb(0,45,114);
+	height:35px;
+	width:35px;
+	border: 3px solid rgb(0,45,114);
+	position:relative;
+
+
+	display:flex;
+	align-items: center;
+	justify-content: center;
 }
