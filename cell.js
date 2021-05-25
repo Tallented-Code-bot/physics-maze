@@ -22,6 +22,25 @@ class Cell{
 			this.neighbors.push(grid[this.row*columns+(this.column-1)]);
 		}
 	}
+
+	show(){
+		if(!this.walls[0]){
+			cells[this.row*columns+this.column].style['border-top']='none';
+		}
+		if(!this.walls[1]){
+			cells[this.row*columns+this.column].style['border-right']='none';
+		}
+		if(!this.walls[2]){
+			cells[this.row*columns+this.column].style['border-bottom']='none';		
+		}
+		if(!this.walls[3]){
+			cells[this.row*columns+this.column].style['border-left']='none';
+		}
+
+		if(this.visited){
+			cells[this.row*columns+this.column].style.background='rgb(255,89,16)';
+		}
+	}
 }
 
 
@@ -52,8 +71,12 @@ function makeGrid(){
 			grid.push(new Cell(i,j));
 		}
 	}
+	for(let i=0;i<rows;i++){
+		for(let j=0;j<columns;j++){
+			grid[i*columns+j].findNeighbors();
+		}
+	}
 }
-
 createMazeRowAndCOlDivs();
 makeGrid();
 
