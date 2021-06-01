@@ -29,8 +29,10 @@ function generateMaze(x,y){
 	while(visited<totalCells){
 		var potential=[[currentCell[0]-1,currentCell[1],0,2],//top
 				[currentCell[0],currentCell[1]+1,1,3],//right
-				[currentCell[0+1,currentCell[1],2,0],//bottom
+				[currentCell[0+1],currentCell[1],2,0],//bottom
 				[currentCell[0],currentCell[1]-1,3,1]];
+
+		var neighbors=new Array();
 
 
 		for(var l=0;l<4;l++){
@@ -47,7 +49,7 @@ function generateMaze(x,y){
 				next=neighbors[Math.floor(Math.random()*neighbors.length)];
 				cells[currentCell[0]][currentCell[1]][next[2]]=1;
 				cells[next[0]][next[1]][next[3]]=1;
-				unvisted[next[0]][next[1]]=false;
+				unvisited[next[0]][next[1]]=false;
 				visited++;
 				currentCell=[next[0],next[1]];
 				path.push(currentCell);
