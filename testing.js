@@ -61,5 +61,31 @@ function generateMaze(x,y){
 	return cells;
 
 }
-alert("ready to start");
-alert(generateMaze(5,5));
+
+
+function drawMaze(maze){
+	let mazeDiv=document.getElementById("maze");
+	for(let y=0;y<maze.length;y++){
+		let row=document.createElement("div");
+		row.classList.add('row');
+		mazeDiv.appendChild(row);	
+
+		for(let x=0;x<maze[y].length;x++){
+			let cell=document.createElement("div");
+			cell.classList.add("cell");
+			cell.style["border"]="solid 1px black";
+			if(maze[y][x][0]==1)cell.style['border-top']="none";
+			if(maze[y][x][1]==1)cell.style['border-right']="none";
+			if(maze[y][x][2]==1)cell.style['border-bottom']="none";
+			if(maze[y][x][3]==1)cell.style['border-left']="none";
+			row.appendChild(cell);
+		}
+	}
+}
+
+console.log("Starting");
+let maze=generateMaze(5,5);
+console.log(maze);
+drawMaze(maze);
+
+
